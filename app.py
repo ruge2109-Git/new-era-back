@@ -12,6 +12,11 @@ if not openai.api_key:
     raise ValueError("No se encontró ninguna clave de API de OpenAI. Configure la variable de entorno OPENAI_ID.")
 
 
+@app.route('/')
+def hello_world():
+    return 'Hello, World!'
+
+
 @app.route('/translate', methods=['POST'])
 def translate():
     text = request.json['text']
